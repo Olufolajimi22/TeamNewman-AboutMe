@@ -26,7 +26,8 @@
 													"pm.test(\"Status code is 404\", function () {\r",
 													"    pm.response.to.have.status(404);\r",
 													"});\r",
-													"pm.test(\"Status code should be not found\", function () {\r",
+													"\r",
+													"pm.test(\"Status code name should be OK\", function () {\r",
 													"    pm.response.to.have.status(\"Not Found\");\r",
 													"});"
 												],
@@ -176,6 +177,7 @@
 													"pm.test(\"Status code is 404\", function () {\r",
 													"    pm.response.to.have.status(404);\r",
 													"});\r",
+													"\r",
 													"pm.test(\"Status code name should be not found\", function () {\r",
 													"    pm.response.to.have.status(\"Not Found\");\r",
 													"});"
@@ -277,6 +279,23 @@
 								},
 								{
 									"name": "Find pet by ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name should be Pet not found\", function () {\r",
+													"    pm.response.to.have.status(\"Not Found\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code is 404\", function () {\r",
+													"    pm.response.to.have.status(404);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
 									"request": {
 										"auth": {
 											"type": "apikey",
@@ -450,16 +469,16 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const response = pm.response.json()\r",
-													"console.log(response[3].id)\r",
-													"pm.environment.set(\"folajid\", response[3].id);\r",
-													"\r",
-													"\r",
-													"pm.test(\"Status code name should be not found\", function () {\r",
-													"    pm.response.to.have.status(\"Not Found\");\r",
-													"});\r",
 													"pm.test(\"Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"\r",
+													"pm.test(\"confirm that body contains id\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+													"});\r",
 													"});"
 												],
 												"type": "text/javascript"
@@ -613,6 +632,23 @@
 						},
 						{
 							"name": "Place an order for a pet",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code name should be OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [
@@ -627,7 +663,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": {{folajid}},\n  \"petId\": -15870458,\n  \"quantity\": 45254015,\n  \"shipDate\": \"2007-06-03T11:33:42.211Z\",\n  \"status\": \"delivered\",\n  \"complete\": false\n}",
+									"raw": "{\n  \"id\": {{folajid}},\n  \"petId\": -15870458,\n  \"quantity\": 45254015,\n  \"shipDate\": \"2007-06-03T11:33:42.211Z\",\n  \"status\": \"delivered\",\n  \"complete\": false\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -802,6 +838,27 @@
 							"body": "{\n  \"anima\": 24047661,\n  \"dolore_c2\": 26073168\n}"
 						}
 					]
+				},
+				{
+					"name": "http://petstore.swagger.io/v2/pet9223372036854591000",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://petstore.swagger.io/v2/pet9223372036854591000",
+							"protocol": "http",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet9223372036854591000"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
