@@ -1,0 +1,77 @@
+{
+  "id": "4503028d-e293-451d-837a-d28a999ca932",
+  "version": "2.0",
+  "name": "Facebook",
+  "url": "https://konga.com",
+  "tests": [{
+    "id": "99ab468b-f7d0-45a0-98f2-99a089d5e352",
+    "name": "facebook",
+    "commands": [{
+      "id": "969401e7-8c01-480e-9e11-4ef1da95396b",
+      "comment": "",
+      "command": "open",
+      "target": "https://web.facebook.com/?_rdc=1&_rdr",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94ddfd7c-352a-4c72-9cc5-75f8f9b41fa2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1174x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6533a158-2cd6-4085-b9b2-882ca8dbb350",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form[@id='u_0_2_MF']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "tolani"
+    }, {
+      "id": "035c86d4-c123-4daa-8375-e9e1ffba81c0",
+      "comment": "",
+      "command": "click",
+      "target": "id=pass",
+      "targets": [
+        ["id=pass", "id"],
+        ["name=pass", "name"],
+        ["css=#pass", "css:finder"],
+        ["xpath=//input[@id='pass']", "xpath:attributes"],
+        ["xpath=//div[@id='passContainer']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fee1f19b-e6ba-42d5-8e13-fee692e14fcf",
+      "comment": "",
+      "command": "type",
+      "target": "id=pass",
+      "targets": [
+        ["id=pass", "id"],
+        ["name=pass", "name"],
+        ["css=#pass", "css:finder"],
+        ["xpath=//input[@id='pass']", "xpath:attributes"],
+        ["xpath=//div[@id='passContainer']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "ghytre"
+    }]
+  }],
+  "suites": [{
+    "id": "8eb5ba34-c7ae-4248-a836-d72cd1fa1e3d",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["99ab468b-f7d0-45a0-98f2-99a089d5e352"]
+  }],
+  "urls": [],
+  "plugins": []
+}
